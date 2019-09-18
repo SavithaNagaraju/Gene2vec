@@ -9,6 +9,11 @@ parser = argparse.ArgumentParser(description='Please specify data directory, emb
 parser.add_argument('fileAddress', metavar='N', type=str, nargs='+',
                     help='python gene2vec.py data_directory output_directory txt')
 
+dirName = 'outputDir'
+# Create target Directory if don't exist
+if not os.path.exists(dirName):
+    os.mkdir(dirName)
+
 args = parser.parse_args()
 sourceDir = args.fileAddress[0]  # source directory of the files
 export_dir = args.fileAddress[1]
